@@ -1,0 +1,18 @@
+apiVersion: route.openshift.io/v1
+kind: Route
+metadata: 
+  labels: 
+    app.kubernetes.io/instance: go-wjulcpvr
+    app.kubernetes.io/managed-by: kustomize
+    app.kubernetes.io/name: go-wjulcpvr 
+  name: go-wjulcpvr
+spec:
+  port:
+    targetPort: 8081 
+  tls:
+    insecureEdgeTerminationPolicy: Redirect
+    termination: edge
+  to:
+    kind: Service
+    name: go-wjulcpvr
+    weight: 100 
